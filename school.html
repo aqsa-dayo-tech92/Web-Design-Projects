@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TITAN School</title>
+    <style>
+    
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f8fafc;
+            color: #1e293b;
+            line-height: 1.6;
+        }
+
+        /* Header / Navigation */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #0f172a; /* Dark Navy Blue */
+            padding: 20px 10%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            color: #ffffff;
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .nav a {
+            color: #cbd5e1;
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        .nav a:hover {
+            color: #3b82f6;
+        }
+
+        /* Hero Section with Beautiful Background Gradient */
+            /* 2. Hero & Navbar Section */
+        .hero {
+            height: 85vh;
+            background: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.75)), 
+                        url('school.jpeg') no-repeat center center/cover; /* .jpeg.jpeg kar dein */
+            padding: 25px 10%;
+            color: white;
+            position: relative;
+        }
+
+        .hero-content {
+            color: white;
+            max-width: 700px;
+        }
+
+        .hero-content h1 {
+            font-size: 45px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .hero-content p {
+            font-size: 16px;
+            color: #cbd5e1;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            background-color: #2563eb;
+            color: white;
+            border: none;
+            padding: 14px 32px;
+            font-size: 15px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #1d4ed8;
+        }
+
+        /* About Us Section */
+        .about {
+            padding: 60px 10%;
+            text-align: center;
+            background-color: #ffffff;
+        }
+
+        .about h2 {
+            font-size: 32px;
+            color: #0f172a;
+            margin-bottom: 20px;
+        }
+
+        .about p {
+            font-size: 16px;
+            color: #64748b;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Our Courses Section */
+        .courses {
+            padding: 60px 10%;
+            text-align: center;
+        }
+
+        .courses h2 {
+            font-size: 32px;
+            color: #0f172a;
+            margin-bottom: 40px;
+        }
+
+        .course-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+        }
+
+        .course-card {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 30px 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e2e8f0;
+            transition: 0.3s;
+        }
+
+        .course-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #0f172a;
+        }
+
+        /* Contact Us Section */
+        .contact {
+            padding: 60px 10%;
+            text-align: center;
+            background-color: #ffffff;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .contact h2 {
+            font-size: 32px;
+            color: #0f172a;
+            margin-bottom: 20px;
+        }
+
+        .contact p {
+            font-size: 16px;
+            color: #64748b;
+        }
+
+        /* Footer Section */
+        .footer {
+            background-color: #0f172a;
+            color: #94a3b8;
+            text-align: center;
+            padding: 30px 10%;
+            font-size: 14px;
+        }
+
+        .footer a {
+            color: #3b82f6;
+            text-decoration: none;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header class="header">
+        <div class="logo">TITAN School</div>
+        <nav class="nav">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Courses</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome to TITAN School</h1>
+            <p>Building future leaders with quality education and skills.</p>
+            <button class="btn">Apply Now</button>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section class="about">
+        <h2>About Us</h2>
+        <p>We provide modern education with practical learning approach.</p>
+    </section>
+
+    <!-- Our Courses Section -->
+    <section class="courses">
+        <h2>Our Courses</h2>
+        <div class="course-grid">
+            <div class="course-card">
+                <div class="card-title">Web Development</div>
+            </div>
+            <div class="course-card">
+                <div class="card-title">Graphic Designing</div>
+            </div>
+            <div class="course-card">
+                <div class="card-title">Digital Marketing</div>
+            </div>
+            <div class="course-card">
+                <div class="card-title">AI Basics</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Us Section -->
+    <section class="contact">
+        <h2>Contact Us</h2>
+        <p>Email: info@titanschool.com</p>
+        <p>Phone: +92 300 1234567</p>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <p>&copy; 2026 TITAN School. All rights reserved. <a href="#">Developed By Aqsa Dayo</a></p>
+    </footer>
+
+</body>
+</html>

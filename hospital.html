@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html >
+<head>
+   
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TITAN Hospital</title>
+    <!-- Google Font: Poppins -->
+    <link href="https://googleapis.com" rel="stylesheet">
+    <style>
+        /* 1. Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #f8fafc;
+            color: #1e293b;
+            line-height: 1.6;
+        }
+
+        /* 2. Hero & Navbar Section */
+            /* 2. Hero & Navbar Section */
+        .hero {
+            height: 85vh;
+            background: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.75)), 
+                        url('hospital.jpg') no-repeat center center/cover; /* Yahan hospital.jpg likh diya hai */
+            padding: 25px 10%;
+            color: white;
+            position: relative;
+        }
+
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            color: #ffffff;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            color: #cbd5e1;
+            text-decoration: none;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        .nav-links a.active, .nav-links a:hover {
+            color: #3b82f6; /* Accent Blue */
+        }
+
+        .hero-content {
+            max-width: 600px;
+            margin-top: 80px;
+        }
+
+        .hero-content h1 {
+            font-size: 48px;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .hero-content p {
+            font-size: 16px;
+            color: #cbd5e1;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn-blue {
+            background-color: #2563eb;
+            color: white;
+            border: none;
+            padding: 12px 28px;
+            font-size: 15px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .btn-blue:hover {
+            background-color: #1d4ed8;
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: white;
+            border: 1px solid #cbd5e1;
+            padding: 12px 28px;
+            font-size: 15px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn-outline:hover {
+            background: white;
+            color: #0f172a;
+        }
+
+        /* 3. Stats Bar Section */
+        .stats-wrapper {
+            padding: 0 10%;
+            position: relative;
+            top: -50px;
+            z-index: 10;
+        }
+
+        .stats-bar {
+            background: white;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            padding: 35px 20px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            gap: 20px;
+        }
+
+        .stat-box h2 {
+            color: #2563eb;
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .stat-box p {
+            color: #64748b;
+            font-size: 14px;
+        }
+
+        /* 4. Services Section */
+        .services-section {
+            padding: 40px 10% 60px 10%;
+            text-align: center;
+        }
+
+        .services-section h2 {
+            font-size: 32px;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 40px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .service-card {
+            background: white;
+            padding: 35px 25px;
+            border-radius: 12px;
+            text-align: left;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+            border: 1px solid #f1f5f9;
+            transition: 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+        }
+
+        .icon-box {
+            width: 50px;
+            height: 50px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        .red-bg { background-color: #fee2e2; }
+        .purple-bg { background-color: #f3e8ff; }
+        .orange-bg { background-color: #ffedd5; }
+        .blue-bg { background-color: #e0f2fe; }
+
+        .service-card h3 {
+            font-size: 18px;
+            color: #0f172a;
+            margin-bottom: 12px;
+        }
+
+        .service-card p {
+            font-size: 14px;
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        /* 5. CTA Banner Section */
+        .cta-wrapper {
+            padding: 0 10%;
+            margin-bottom: 60px;
+        }
+
+        .cta-banner {
+            background: linear-gradient(135deg, #2563eb, #1d4ed8);
+            color: white;
+            padding: 40px;
+            border-radius: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .cta-text h2 {
+            font-size: 26px;
+            margin-bottom: 5px;
+        }
+
+        .cta-text p {
+            font-size: 15px;
+            color: #bfdbfe;
+        }
+
+        .btn-white {
+            background-color: white;
+            color: #2563eb;
+            border: none;
+            padding: 14px 30px;
+            font-size: 15px;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn-white:hover {
+            background-color: #f8fafc;
+        }
+
+        /* 6. Doctors Section */
+        .doctors-section {
+            padding: 20px 10% 60px 10%;
+            text-align: center;
+        }
+
+        .doctors-section h2 {
+            font-size: 32px;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 40px;
+        }
+
+        .doctors-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
+        }
+
+        .doctor-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+            text-align: left;
+            border: 1px solid #f1f5f9;
+            transition: 0.3s;
+        }
+
+        .doctor-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .doctor-card img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            background-color: #e2e8f0;
+        }
+
+        .doc-info {
+            padding: 20px;
+        }
+
+        .doc-info h3 {
+            font-size: 18px;
+            color: #0f172a;
+            margin-bottom: 5px;
+        }
+
+        .doc-info p {
+            font-size: 14px;
+            color: #64748b;
+        }
+
+        /* 7. Footer Section */
+        footer {
+            background-color: #0f172a;
+            color: #94a3b8;
+            padding: 30px 10%;
+            border-top: 1px solid #1e293b;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .footer-bottom a {
+            color: #3b82f6;
+            text-decoration: none;
+            font-weight: 500;
+            margin-left: 5px;
+        }
+
+        .footer-bottom a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. HERO SECTION -->
+    <header class="hero">
+        <nav class="navbar">
+            <div class="logo">TITAN Hospital</div>
+            <ul class="nav-links">
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Doctors</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        
+        <div class="hero-content">
+            <h1>Advanced <br> Healthcare For <br> Better Living</h1>
+            <p>TITAN Hospital delivers exceptional healthcare services with experienced doctors, modern medical technology, and compassionate patient care.</p>
+            <div class="hero-buttons">
+                <button class="btn-blue">Book Appointment</button>
+                <button class="btn-outline">Explore Services</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. STATS BAR SECTION -->
+    <section class="stats-wrapper">
+        <div class="stats-bar">
+            <div class="stat-box">
+                <h2>15+</h2>
+                <p>Years Experience</p>
+            </div>
+            <div class="stat-box">
+                <h2>50+</h2>
+                <p>Happy Doctors</p>
+            </div>
+            <div class="stat-box">
+                <h2>20K+</h2>
+                <p>Happy Patients</p>
+            </div>
+            <div class="stat-box">
+                <h2>24/7</h2>
+                <p>Emergency Support</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. SERVICES SECTION -->
+    <section class="services-section">
+        <h2>Medical Services We Provide</h2>
+        
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="icon-box red-bg">❤️</div>
+                <h3>Cardiology</h3>
+                <p>Complete heart care services with advanced diagnosis and treatment.</p>
+            </div>
+            <div class="service-card">
+                <div class="icon-box purple-bg">🧠</div>
+                <h3>Neurology</h3>
+                <p>Specialized neurological treatments using modern healthcare technology.</p>
+            </div>
+            <div class="service-card">
+                <div class="icon-box orange-bg">🚑</div>
+                <h3>Emergency Care</h3>
+                <p>Immediate emergency medical services available 24/7 with dedicated care.</p>
+            </div>
+            <div class="service-card">
+                <div class="icon-box blue-bg">🧪</div>
+                <h3>Laboratory</h3>
+                <p>Accurate laboratory testing and diagnostics with modern equipment.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. CALL TO ACTION (CTA) BANNER -->
+    <section class="cta-wrapper">
+        <div class="cta-banner">
+            <div class="cta-text">
+                <h2>Need Medical Assistance?</h2>
+                <p>We are here to help you 24/7 with professional medical support.</p>
+            </div>
+            <button class="btn-white">Contact Us</button>
+        </div>
+    </section>
+
+    <!-- 5. DOCTORS SECTION -->
+    <section class="doctors-section">
+        <h2>Meet Our Doctors</h2>
+        
+        <div class="doctors-grid">
+            <div class="doctor-card">
+                <img src="doctor1.jpeg" alt="Doctor 1">
+                <div class="doc-info">
+                    <h3>Dr. Sarah Khan</h3>
+                    <p>Cardiologist</p>
+                </div>
+            </div>
+            <div class="doctor-card">
+                <img src="doctor2.jpeg" alt="Doctor 2">
+                <div class="doc-info">
+                    <h3>Dr. Ahmed Ali</h3>
+                    <p>Neurologist</p>
+                </div>
+            </div>
+            <div class="doctor-card">
+                <img src="doctor3.jpeg" alt="Doctor 3">
+                <div class="doc-info">
+                    <h3>Dr. Maria Omer</h3>
+                    <p>Pediatrician</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. FOOTER SECTION -->
+    <footer>
+        <div class="footer-bottom">
+            <p>&copy; 2026 TITAN Hospital. All rights reserved. <a href="#">Developed By Aqsa Dayo</a></p>
+        </div>
+    </footer>
+
+</body>
+</html>
